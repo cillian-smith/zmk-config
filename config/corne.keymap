@@ -30,6 +30,16 @@
 #define HRO LGUI O
 
 / {
+        behaviours {
+            hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -42,7 +52,7 @@
 //               | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    	&none 	&kp Q   	&kp W   	&kp F   	&kp P   	&kp B   	&kp J 	&kp L   	&kp U   	&kp Y   	&kp SQT 	&none
-   	&none 	&mt HRA 	&mt HRR 	&mt HRS 	&mt HRT 	&kp G   	&kp M 	&mt HRN 	&mt HRE 	&mt HRI 	&mt HRO 	&none
+   	&none 	&hm HRA 	&hm HRR 	&hm HRS 	&hm HRT 	&kp G   	&kp M 	&hm HRN 	&hm HRE 	&hm HRI 	&hm HRO 	&none
    	&none 	&kp Z   	&kp X   	&kp C   	&kp D   	&kp V   	&kp K 	&kp H   	&kp COMMA 	&kp DOT 	&kp FSLH 	&none
          	            &lt MED ESC &lt NAV SPACE  &lt MSE TAB    	                        &lt SYM RET   	&lt NUM BSPC	&lt FUN DEL
                         >;
